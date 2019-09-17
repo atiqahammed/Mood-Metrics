@@ -1,0 +1,26 @@
+{
+  "name": "mood-metrics",
+  "version": "1.0.0",
+  "description": "An application for calculation of mood metrics.",
+  "main": "index.js",
+  "dependencies": {
+    "download-git-repo": "^2.0.0",
+    "git-download": "0.0.2",
+    "tar": "^4.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atiqahammed/Mood-Metrics.git"
+  },
+  "author": "atiqahammed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atiqahammed/Mood-Metrics/issues"
+  },
+  "homepage": "https://github.com/atiqahammed/Mood-Metrics#readme"
+}
