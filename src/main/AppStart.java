@@ -13,14 +13,17 @@ public class AppStart {
 		ArrayList<String> filteredPath = Const.UTILS.filterCsFiles(Const.ALL_FILE_PATH);
 		
 		
-		System.out.println(Const.ALL_FILE_PATH.size());
+//		System.out.println(Const.ALL_FILE_PATH.size());
 		
 		
-		Const.UTILS.processClass(filteredPath.get(0));
+		for(String path: filteredPath) 
+			Const.UTILS.processClass(path);
+//		Const.UTILS.processClass(filteredPath.get(0));
 		
+		System.out.println(Const.ALL_CLASSES.size());
 		
-		System.out.println(filteredPath.get(0));
-		System.out.println(filteredPath.size());
+//		System.out.println(filteredPath.get(0));
+//		System.out.println(filteredPath.size());
 		
 	}
 	

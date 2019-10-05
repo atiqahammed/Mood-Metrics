@@ -22,9 +22,26 @@ public class Utils {
 		ArrayList<String> linesOfCode = Const.FILE_READWRITER.readStringsFromFile(path);
 
 		if (isClass(linesOfCode)) {
-			System.out.println("this is a class");
+
+			String className = getClassName(linesOfCode);
+			Const.ALL_CLASSES.add(new ClassTemplate(className, path));
+			
+			
+//			System.out.println(className);
+//			System.out.println("this is a class");
 		}
 
+		return null;
+	}
+
+	private String getClassName(ArrayList<String> linesOfCode) {
+		for (String line : linesOfCode) {
+			String trimedLine = line.trim();
+			String keywords[] = trimedLine.split(" ");
+			if (keywords.length >= 3 && keywords[1].equals("class") && keywords[0].equals("public"))
+				return keywords[2];
+
+		}
 		return null;
 	}
 
@@ -38,9 +55,7 @@ public class Utils {
 				if (classKeyWordFound(keywords)) {
 					return true;
 				}
-//				System.out.println(line);
 			}
-//			System.out.println(line);
 		}
 
 		return false;
