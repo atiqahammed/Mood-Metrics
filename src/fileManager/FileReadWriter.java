@@ -25,10 +25,10 @@ public class FileReadWriter {
 				allStrings.add(sCurrentLine);
 			}
 		} catch (IOException e) {
-			System.out.println("file reading problm in FileReadWriter class");
+//			System.out.println("file reading problm in FileReadWriter class");
 		}
 
-		System.out.println("File reading completed");
+//		System.out.println("File reading completed");
 		return allStrings;
 	}
 
