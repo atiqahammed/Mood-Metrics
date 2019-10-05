@@ -1,6 +1,7 @@
 package sheared;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import fileManager.FileReadWriter;
 import template.ClassTemplate;
@@ -12,6 +13,9 @@ public class Const {
 	
 	
 	public static ArrayList<ClassTemplate> ALL_CLASSES = new ArrayList<ClassTemplate>();
+	public static final ArrayList<String> ACCESS_MODIFIER = new ArrayList<String>(Arrays.asList("public", "private", "protected")); 
+        
+    
 	
 	public static ArrayList<String> ALL_FILE_PATH = new ArrayList<String>();
 	

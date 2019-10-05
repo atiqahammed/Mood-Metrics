@@ -24,7 +24,11 @@ public class Utils {
 		if (isClass(linesOfCode)) {
 
 			String className = getClassName(linesOfCode);
-			Const.ALL_CLASSES.add(new ClassTemplate(className, path));
+			ClassTemplate template = new ClassTemplate(className, path);
+			
+			template.processInfo();
+			
+			Const.ALL_CLASSES.add(template);
 			
 			
 //			System.out.println(className);
@@ -33,6 +37,10 @@ public class Utils {
 
 		return null;
 	}
+	
+	
+
+	
 
 	private String getClassName(ArrayList<String> linesOfCode) {
 		for (String line : linesOfCode) {
