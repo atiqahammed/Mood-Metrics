@@ -20,5 +20,6 @@ public class Const {
 	public static ArrayList<String> ALL_FILE_PATH = new ArrayList<String>();
 	
 	public static final String PROJECT_1 = "./Reddnet/";
+	public static final String PROJECT_2 = "./BlogCoreEngine/";
 
 }
