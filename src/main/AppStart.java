@@ -2,7 +2,6 @@ package main;
 
 import java.util.ArrayList;
 
-import fileManager.FileReadWriter;
 import sheared.Const;
 
 public class AppStart {
@@ -15,6 +14,12 @@ public class AppStart {
 		
 		
 		System.out.println(Const.ALL_FILE_PATH.size());
+		
+		
+		Const.UTILS.processClass(filteredPath.get(0));
+		
+		
+		System.out.println(filteredPath.get(0));
 		System.out.println(filteredPath.size());
 		
 	}
