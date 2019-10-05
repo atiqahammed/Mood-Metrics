@@ -6,7 +6,8 @@ import fileManager.FileReadWriter;
 
 public class Const {
 	
-	public static FileReadWriter FILE_READWRITER = new FileReadWriter();
+	public static final FileReadWriter FILE_READWRITER = new FileReadWriter();
+	public static final Utils UTILS = new Utils();
 	
 	public static ArrayList<String> ALL_FILE_PATH = new ArrayList<String>();
 	

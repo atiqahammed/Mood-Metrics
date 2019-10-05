@@ -11,9 +11,11 @@ public class AppStart {
 		System.out.println("hello dear");
 	
 		Const.FILE_READWRITER.getAllFileNameInDirectory(Const.PROJECT_1);
+		ArrayList<String> filteredPath = Const.UTILS.filterCsFiles(Const.ALL_FILE_PATH);
+		
 		
 		System.out.println(Const.ALL_FILE_PATH.size());
-		
+		System.out.println(filteredPath.size());
 		
 	}
 	
