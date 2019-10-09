@@ -69,7 +69,7 @@ public class Utils {
 		return false;
 	}
 
-	private boolean classKeyWordFound(String[] keywords) {
+	public static boolean classKeyWordFound(String[] keywords) {
 
 		if (keywords.length >= 2 && keywords[1].equals("class") && keywords[0].equals("public"))
 			return true;

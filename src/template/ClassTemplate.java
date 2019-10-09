@@ -3,6 +3,7 @@ package template;
 import java.util.ArrayList;
 
 import sheared.Const;
+import sheared.Utils;
 
 public class ClassTemplate {
 
@@ -11,14 +12,80 @@ public class ClassTemplate {
 
 	private ArrayList<Attribute> attributes;
 	private ArrayList<Method> methods;
-
+	private ArrayList<String> polyMorphicMethods;
+	private ArrayList<String> descendants;
+	
+	
+	public String getPath() {
+		return path;
+	}
+	
+	
 	public ClassTemplate(String className, String path) {
 		this.className = className;
 		this.path = path;
 		attributes = new ArrayList<Attribute>();
 		methods = new ArrayList<Method>();
+		polyMorphicMethods = new ArrayList<String>();
+		descendants = new ArrayList<String>();
+		
+		
 	}
 	
+	private void processDescendants() {
+		
+		descendants.add(className);
+		for(ClassTemplate classTemplate: Const.ALL_CLASSES) {
+			ArrayList<String> linesOfCode = Const.FILE_READWRITER.readStringsFromFile(classTemplate.getPath());
+			
+			
+			for (String line : linesOfCode) {
+				String trimedLine = line.trim();
+
+				if (!trimedLine.startsWith("#")) {
+					String keywords[] = trimedLine.split(" ");
+					if (Utils.classKeyWordFound(keywords)) {
+//						System.out.println("-------------------");
+						boolean implemented = false;
+						boolean thisClass = false;
+						for(int i = 0; i < keywords.length; i++) {
+							if(keywords[i].equals(":"))
+								implemented = true;
+							if(keywords[i].equals(className))
+								thisClass = true;
+						}
+//							System.out.println(keywords[i]);
+						if(thisClass && implemented)
+							descendants.add(classTemplate.getClassName());
+					}
+				}
+			}
+				
+		}
+		
+	}
+	
+	
+
+	private void processPolyMorphicMethod() {
+		ArrayList<String> uniqueMethods = new ArrayList<String>();
+		for(Method method: methods) {
+			String methodName = method.getName();
+			if(!uniqueMethods.contains(methodName)) {
+				uniqueMethods.add(methodName);
+				polyMorphicMethods.add(methodName);
+			}
+		}
+	}
+	
+	public int getPolyMorphucMethodCount() {
+		return polyMorphicMethods.size();
+	}
+	
+	public int getNewMethodMultiplyedByDescendants() {
+		return descendants.size() * methods.size();
+	}
+
 	public int getAttributesSize() {
 		return attributes.size();
 	}
@@ -52,6 +119,9 @@ public class ClassTemplate {
 
 		findAttributes(allLineOfCode);
 		findMethods(allLineOfCode);
+		
+		processPolyMorphicMethod();
+		processDescendants();
 
 	}
 
