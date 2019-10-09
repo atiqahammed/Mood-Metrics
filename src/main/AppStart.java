@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 
 import sheared.Const;
+import sheared.Utils;
 import template.ClassTemplate;
 
 public class AppStart {
@@ -19,6 +20,9 @@ public class AppStart {
 		
 		for(String path: filteredPath) 
 			Const.UTILS.processClass(path);
+		
+		for(ClassTemplate template: Const.ALL_CLASSES)
+			template.processInfo();
 //		Const.UTILS.processClass(filteredPath.get(0));
 		
 //		System.out.println(Const.ALL_CLASSES.size());
@@ -32,6 +36,7 @@ public class AppStart {
 		int totalDefinedMethodCount = 0;
 		int totalAttributeCount = 0;
 		int totalDefinedAttributeCount = 0;
+		int totalCall = 0;
 		
 		for(ClassTemplate template: Const.ALL_CLASSES) {
 			
@@ -45,11 +50,13 @@ public class AppStart {
 			totalDefinedMethodCount += template.getDefinedMethod();
 			totalAttributeCount += template.getTotalAttribute();
 			totalDefinedAttributeCount += template.getDefinedAttribute();
+			totalCall += template.getTotalCall();
 		}
 		
 		System.out.println(totalAttribute);
 		System.out.println(totalHiddenAttribute);
 		
+		int TC = Const.ALL_CLASSES.size();
 		
 		System.out.println("Methods Hiding Factor : MHF = " + (double) totalHiddenMethod / totalMethod);
 		System.out.println("Attributes Hiding Factors : AHF = " + (double) totalHiddenAttribute / totalAttribute);
@@ -57,7 +64,7 @@ public class AppStart {
 		System.out.println("POF :" +(double) totalPLMRC / totalPMD);
 		System.out.println("MIF: " + (double) totalDefinedMethodCount / totalMethodCount);
 		System.out.println("AIF : " + (double) totalDefinedAttributeCount / totalAttributeCount);
-		
+		System.out.println("COF : " + (double) totalCall / (TC * TC - TC));
 //		System.out.println(filteredPath.get(0));
 //		System.out.println(filteredPath.size());
 		

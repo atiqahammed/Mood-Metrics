@@ -26,14 +26,12 @@ public class Utils {
 			String className = getClassName(linesOfCode);
 			ClassTemplate template = new ClassTemplate(className, path);
 			
-			template.processInfo();
+//			template.processInfo();
 			
 			Const.ALL_CLASSES.add(template);
-			
-			
-//			System.out.println(className);
-//			System.out.println("this is a class");
 		}
+		
+		
 
 		return null;
 	}

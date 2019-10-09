@@ -18,10 +18,16 @@ public class ClassTemplate {
 	private int totalMethod;
 	private int definedAttribute;
 	private int totalAttribute;
+	private int totalCall;
 	
 	
 	public String getPath() {
 		return path;
+	}
+	
+	
+	public int getTotalCall() {
+		return totalCall;
 	}
 	
 	
@@ -37,6 +43,7 @@ public class ClassTemplate {
 		
 		totalMethod = 0;
 		definedMethod = 0;
+		totalCall = 0;
 	}
 	
 	private void processDescendants() {
@@ -146,6 +153,7 @@ public class ClassTemplate {
 		processTotalMethodAndAttribute();
 		processDescendants();
 		processPolyMorphicMethod();
+		processTotalCall();
 		
 		
 		
@@ -153,6 +161,30 @@ public class ClassTemplate {
 
 	}
 	
+	private void processTotalCall() {
+		
+		System.out.println("---------------------" + className);
+		
+		for(ClassTemplate template: Const.ALL_CLASSES) {
+			boolean found = false;
+			if(!template.getClassName().equals(className)) {
+				ArrayList<String> linesOfCode = Const.FILE_READWRITER.readStringsFromFile(template.getPath());
+				for(String line: linesOfCode) {
+					if(line.contains(className))
+						found = true;
+				}
+			}
+			
+			if(found)
+				totalCall ++;
+//			System.out.println(template.className);
+		}
+		
+		System.out.println("++++++++++++++++++++++++++++++++++   "  + totalCall);
+		
+	}
+
+
 	public int getTotalMethod() {
 		return totalMethod;
 	}
