@@ -28,6 +28,10 @@ public class AppStart {
 		int totalMethod = 0;
 		int totalPLMRC = 0;
 		int totalPMD = 0;
+		int totalMethodCount = 0;
+		int totalDefinedMethodCount = 0;
+		int totalAttributeCount = 0;
+		int totalDefinedAttributeCount = 0;
 		
 		for(ClassTemplate template: Const.ALL_CLASSES) {
 			
@@ -37,7 +41,10 @@ public class AppStart {
 			totalMethod += template.getMethodSize();
 			totalPLMRC += template.getPolyMorphucMethodCount();
 			totalPMD += template.getNewMethodMultiplyedByDescendants();
-			
+			totalMethodCount += template.getTotalMethod();
+			totalDefinedMethodCount += template.getDefinedMethod();
+			totalAttributeCount += template.getTotalAttribute();
+			totalDefinedAttributeCount += template.getDefinedAttribute();
 		}
 		
 		System.out.println(totalAttribute);
@@ -48,7 +55,8 @@ public class AppStart {
 		System.out.println("Attributes Hiding Factors : AHF = " + (double) totalHiddenAttribute / totalAttribute);
 		System.out.println("total number of classes: Ci = " + Const.ALL_CLASSES.size());
 		System.out.println("POF :" +(double) totalPLMRC / totalPMD);
-		
+		System.out.println("MIF: " + (double) totalDefinedMethodCount / totalMethodCount);
+		System.out.println("AIF : " + (double) totalDefinedAttributeCount / totalAttributeCount);
 		
 //		System.out.println(filteredPath.get(0));
 //		System.out.println(filteredPath.size());

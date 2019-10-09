@@ -14,6 +14,10 @@ public class ClassTemplate {
 	private ArrayList<Method> methods;
 	private ArrayList<String> polyMorphicMethods;
 	private ArrayList<String> descendants;
+	private int definedMethod;
+	private int totalMethod;
+	private int definedAttribute;
+	private int totalAttribute;
 	
 	
 	public String getPath() {
@@ -22,14 +26,17 @@ public class ClassTemplate {
 	
 	
 	public ClassTemplate(String className, String path) {
+		
 		this.className = className;
 		this.path = path;
+		
 		attributes = new ArrayList<Attribute>();
 		methods = new ArrayList<Method>();
 		polyMorphicMethods = new ArrayList<String>();
 		descendants = new ArrayList<String>();
 		
-		
+		totalMethod = 0;
+		definedMethod = 0;
 	}
 	
 	private void processDescendants() {
@@ -40,29 +47,39 @@ public class ClassTemplate {
 			
 			
 			for (String line : linesOfCode) {
+				
+				
 				String trimedLine = line.trim();
 
+				
 				if (!trimedLine.startsWith("#")) {
+					
+					
 					String keywords[] = trimedLine.split(" ");
+					
+					
 					if (Utils.classKeyWordFound(keywords)) {
-//						System.out.println("-------------------");
+						
 						boolean implemented = false;
 						boolean thisClass = false;
+						
 						for(int i = 0; i < keywords.length; i++) {
+							
 							if(keywords[i].equals(":"))
 								implemented = true;
+							
 							if(keywords[i].equals(className))
 								thisClass = true;
+							
 						}
-//							System.out.println(keywords[i]);
+						
+						
 						if(thisClass && implemented)
 							descendants.add(classTemplate.getClassName());
 					}
 				}
-			}
-				
+			}	
 		}
-		
 	}
 	
 	
@@ -120,10 +137,78 @@ public class ClassTemplate {
 		findAttributes(allLineOfCode);
 		findMethods(allLineOfCode);
 		
-		processPolyMorphicMethod();
+		
+		definedMethod += methods.size();
+		totalMethod += definedMethod;
+		definedAttribute += attributes.size();
+		totalAttribute += definedAttribute;
+		
+		processTotalMethodAndAttribute();
 		processDescendants();
+		processPolyMorphicMethod();
+		
+		
+		
+		
 
 	}
+	
+	public int getTotalMethod() {
+		return totalMethod;
+	}
+	
+	public int getDefinedMethod() {
+		return definedMethod;
+	}
+
+	private void processTotalMethodAndAttribute() {
+		
+		ArrayList<String> linesOfCode = Const.FILE_READWRITER.readStringsFromFile(path);
+		
+		
+		for (String line : linesOfCode) {
+			
+			
+			String trimedLine = line.trim();
+
+			
+			if (!trimedLine.startsWith("#")) {
+				
+				
+				String keywords[] = trimedLine.split(" ");
+				
+				
+				if (Utils.classKeyWordFound(keywords)) {
+					
+					boolean implemented = false;
+//					boolean thisClass = false;
+					
+					for(int i = 0; i < keywords.length; i++) {
+						
+						if(keywords[i].equals(":"))
+							implemented = true;
+						
+						for(ClassTemplate template: Const.ALL_CLASSES) {
+							if(implemented && !className.equals(keywords[i]) && keywords[i].equals(template.className)) {
+								totalMethod += template.getHiddenMethodSize();
+								totalAttribute += template.getAttributesSize();
+							}
+						}
+						
+					}
+					
+					
+//					if(thisClass && implemented)
+//						descendants.add(classTemplate.getClassName());
+				}
+			}
+		}
+		
+		
+		
+		
+	}
+
 
 	private void findMethods(ArrayList<String> allLineOfCode) {
 		// TODO Auto-generated method stub
@@ -143,15 +228,11 @@ public class ClassTemplate {
 			}
 			
 			if(Const.ACCESS_MODIFIER.contains(words[0]) && (line.endsWith(")") || line.endsWith(");"))) {
-//				System.out.println(line);
 				for(int i = 0; i < words.length; i++) {
-//					System.out.println(words[i]);
-//					System.out.println();
 					String []tempWords = words[i].split("\\(");
 					if(tempWords.length > 1) {
 						String name = tempWords[0];
 						String type = words[0];
-//						System.out.println(name +" " + type);
 						methods.add(new Method(name, type));
 					}
 				}
@@ -171,6 +252,16 @@ public class ClassTemplate {
 
 	public String getClassName() {
 		return className;
+	}
+
+
+	public int getDefinedAttribute() {
+		return definedAttribute;
+	}
+
+
+	public int getTotalAttribute() {
+		return totalAttribute;
 	}
 
 }
