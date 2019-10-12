@@ -25,20 +25,14 @@ public class Utils {
 
 			String className = getClassName(linesOfCode);
 			ClassTemplate template = new ClassTemplate(className, path);
-			
+
 //			template.processInfo();
-			
+
 			Const.ALL_CLASSES.add(template);
 		}
-		
-		
 
 		return null;
 	}
-	
-	
-
-	
 
 	private String getClassName(ArrayList<String> linesOfCode) {
 		for (String line : linesOfCode) {
@@ -72,6 +66,10 @@ public class Utils {
 		if (keywords.length >= 2 && keywords[1].equals("class") && keywords[0].equals("public"))
 			return true;
 		return false;
+	}
+
+	public static String getProjectGithubLink(String projectName, String author) {
+		return "https://github.com/" + author + "/" + projectName;
 	}
 
 }
