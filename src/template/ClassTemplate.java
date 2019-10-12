@@ -19,6 +19,8 @@ public class ClassTemplate {
 	private int definedAttribute;
 	private int totalAttribute;
 	private int totalCall;
+	private int totalCallClass;
+	private int LCOM1;
 	
 	
 	public String getPath() {
@@ -44,6 +46,8 @@ public class ClassTemplate {
 		totalMethod = 0;
 		definedMethod = 0;
 		totalCall = 0;
+		totalCallClass = 0;
+		LCOM1 = 0;
 	}
 	
 	private void processDescendants() {
@@ -154,36 +158,76 @@ public class ClassTemplate {
 		processDescendants();
 		processPolyMorphicMethod();
 		processTotalCall();
-		
+		LCOM1 = nCr(methods.size(), 2);
+		processLCOM1();
 		
 		
 		
 
 	}
 	
+	public int getLCOM1() {
+		if(LCOM1 >= 0)
+			return LCOM1;
+		return 0;
+	}
+	
+	private void processLCOM1() {
+		
+		ArrayList<String> lines = Const.FILE_READWRITER.readStringsFromFile(path);
+		for(String line: lines) {
+			for(Method method: methods) {
+				if(line.contains(method.getName()))
+					LCOM1--;
+			}
+		}
+		
+	}
+
+
 	private void processTotalCall() {
 		
-		System.out.println("---------------------" + className);
+//		System.out.println("---------------------" + className);
 		
 		for(ClassTemplate template: Const.ALL_CLASSES) {
 			boolean found = false;
 			if(!template.getClassName().equals(className)) {
 				ArrayList<String> linesOfCode = Const.FILE_READWRITER.readStringsFromFile(template.getPath());
 				for(String line: linesOfCode) {
-					if(line.contains(className))
+					if(line.contains(className)) {
 						found = true;
+						totalCall ++;
+					}
+						
 				}
 			}
 			
 			if(found)
-				totalCall ++;
-//			System.out.println(template.className);
+				totalCallClass++;
 		}
-		
-		System.out.println("++++++++++++++++++++++++++++++++++   "  + totalCall);
 		
 	}
 
+	public int getTotalCallClass() {
+		return totalCallClass;
+	}
+	
+	private int nCr(int n, int r) { 
+	    return fact(n) / (fact(r) * fact(n - r)); 
+	} 
+	  
+	// Returns factorial of n 
+	private int fact(int n) { 
+	    int res = 1; 
+	    for (int i = 2; i <= n; i++) 
+	        res = res * i; 
+	    if(res < 1) return 1;
+	    return res; 
+	} 
+	
+	public int getMethodRFC() {
+		return methods.size() + Const.rfFctr;
+	}
 
 	public int getTotalMethod() {
 		return totalMethod;
