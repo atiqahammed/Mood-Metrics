@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="auctionDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bidTable">
+    <Key>
+      <PropertyRef Name="bidID" />
+    </Key>
+    <Property Name="bidID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bidPrice" Type="int" />
+    <Property Name="userName" Type="nvarchar(max)" />
+    <Property Name="productId" Type="int" />
+    <Property Name="productName" Type="nvarchar(max)" />
+    <Property Name="bidStatus" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="productTable">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productName" Type="nvarchar(max)" />
+    <Property Name="productInfo" Type="nvarchar(max)" />
+    <Property Name="basePrice" Type="int" />
+    <Property Name="startDate" Type="date" />
+    <Property Name="endDate" Type="date" />
+    <Property Name="biddedPrice" Type="int" />
+    <Property Name="productCategory" Type="nvarchar(max)" />
+    <Property Name="uploader" Type="nvarchar(max)" />
+    <Property Name="bidder" Type="nvarchar(max)" />
+    <Property Name="image" Type="image" />
+  </EntityType>
+  <EntityType Name="userTable">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="nvarchar(max)" />
+    <Property Name="passWord" Type="nvarchar(max)" />
+    <Property Name="userStatus" Type="nvarchar(max)" />
+    <Property Name="role" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="auctionDBModelStoreContainer">
+    <EntitySet Name="bidTable" EntityType="Self.bidTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productTable" EntityType="Self.productTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userTable" EntityType="Self.userTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

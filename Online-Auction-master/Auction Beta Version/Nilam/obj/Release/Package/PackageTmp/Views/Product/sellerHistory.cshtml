@@ -1,0 +1,124 @@
+﻿@model IEnumerable<dbLayer.productTable>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Seller History</title>
+
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-11">
+
+        </div>
+
+        <div class="col-md-1">
+            <form method="post" id="ForgotPassword" action="~/Account/Logout">
+                <button type="submit" class="btn btn-danger">Log Out</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="well text-center">Seller's History</h2>
+
+    </div>
+
+    <div class="container">
+        <table class="table" border="1">
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.productID)
+                    </th>*@
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Product Info
+                </th>
+                <th>
+                    Starting Price
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.startDate)
+                    </th>*@
+                @*<th>
+                        @Html.DisplayNameFor(model => model.endDate)
+                    </th>*@
+                <th>
+                    Winning Bid
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    <b>Seller's Name</b>
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.bidder)
+                    </th>*@
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.productID)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productInfo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.basePrice)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.startDate)
+                        </td>*@
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.endDate)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.biddedPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productCategory)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.uploader)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.bidder)
+                        </td>*@
+                    @*<td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>*@
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="container">
+        <form method="post" id="goback" action="~/Account/LoggedIn">
+            <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true">Back</span></button>
+        </form>
+    </div>
+</body>
+</html>

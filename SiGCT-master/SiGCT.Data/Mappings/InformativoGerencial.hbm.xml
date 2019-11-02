@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SiGCT.Models"
+                   namespace="SiGCT.Models" >
+
+  <class name="InformativoGerencial" schema="SiGCT">
+
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="Conta" class="Conta" column="ContaId" />
+    <many-to-one name="Recurso" class="Recurso" column="RecursoId" />
+    <many-to-one name="Categoria" class="Categoria" column="CategoriaId" />
+
+    <property name="TextoInformativo" />
+    <property name="Valor" />
+
+    <property name="Filler" length="15" not-null="false" />
+    <property name="Obs" length="50" not-null="false" />
+
+  </class>
+</hibernate-mapping>

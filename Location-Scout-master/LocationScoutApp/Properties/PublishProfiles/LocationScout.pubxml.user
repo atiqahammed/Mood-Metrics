@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Siddharth\Desktop\PublishedWebApp</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AdminLogin.aspx">
+      <publishTime>11/25/2015 20:04:24</publishTime>
+    </File>
+    <File Include="bin/HashClassLibrary.dll">
+      <publishTime>11/21/2015 14:05:46</publishTime>
+    </File>
+    <File Include="bin/LocationScoutApp.dll">
+      <publishTime>11/27/2015 12:36:10</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/17/2015 23:51:56</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/18/2015 20:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/18/2015 20:03:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/18/2015 20:03:38</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>11/25/2015 19:16:34</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/18/2015 00:07:58</publishTime>
+    </File>
+    <File Include="HashTryIt.aspx">
+      <publishTime>11/21/2015 13:58:58</publishTime>
+    </File>
+    <File Include="ImageVerifier.aspx">
+      <publishTime>11/27/2015 01:12:26</publishTime>
+    </File>
+    <File Include="LoginControl.ascx">
+      <publishTime>11/20/2015 20:17:42</publishTime>
+    </File>
+    <File Include="Member.aspx">
+      <publishTime>11/26/2015 14:30:58</publishTime>
+    </File>
+    <File Include="MemberLogin.aspx">
+      <publishTime>11/25/2015 20:00:22</publishTime>
+    </File>
+    <File Include="MemberRegisteration.aspx">
+      <publishTime>11/25/2015 19:53:10</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/20/2015 22:32:04</publishTime>
+    </File>
+    <File Include="PageHeaderControl.ascx">
+      <publishTime>11/20/2015 18:23:56</publishTime>
+    </File>
+    <File Include="Service References/NewsServiceRef/LocationScoutApp.NewsServiceRef.News.datasource">
+      <publishTime>11/20/2015 02:49:40</publishTime>
+    </File>
+    <File Include="Staff.aspx">
+      <publishTime>11/20/2015 22:13:00</publishTime>
+    </File>
+    <File Include="StaffLogin.aspx">
+      <publishTime>11/25/2015 20:02:40</publishTime>
+    </File>
+    <File Include="StaffRegistration.aspx">
+      <publishTime>11/26/2015 14:18:04</publishTime>
+    </File>
+    <File Include="UserManipulationTryIt.aspx">
+      <publishTime>11/21/2015 13:59:10</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/27/2015 12:36:10</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

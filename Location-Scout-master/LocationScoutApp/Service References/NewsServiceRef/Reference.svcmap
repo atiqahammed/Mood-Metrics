@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6dce4ade-c5b4-40d3-907a-738352472413" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://webstrar14.fulton.asu.edu/page1/NewsDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NewsDataService.wsdl" MetadataType="Wsdl" ID="1bb00647-0d4c-41c5-9976-cbdd07f63405" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/NewsDataService.svc?wsdl" />
+    <MetadataFile FileName="NewsDataService.xsd" MetadataType="Schema" ID="48e12fd8-1760-4798-ab02-dd66e208f79d" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/NewsDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NewsDataService.disco" MetadataType="Disco" ID="b84be770-b808-4e4d-8608-3ea556e8bb9f" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/NewsDataService.svc?disco" />
+    <MetadataFile FileName="NewsDataService1.xsd" MetadataType="Schema" ID="84ac09ab-680d-4707-8557-68a580a56511" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/NewsDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NewsDataService2.xsd" MetadataType="Schema" ID="a6959ced-f9ab-42f5-964b-07d0e4075c65" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/NewsDataService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

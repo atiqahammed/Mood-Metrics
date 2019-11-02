@@ -1,0 +1,25 @@
+﻿########################################################################################
+# Hide any database files that contain the database connection strings
+########################################################################################
+/src/Database/Uoft Database.dbmdl
+/src/Database/Uoft Database.jfm
+/src/Database/Uoft Database.jfm
+/src/Database/Uoft Database.jfm
+/src/Database/Uoft Database_1.publish.xml
+/src/Database/Uoft Database_2.publish.xml
+/src/Database/Uoft Database.sqlproj.user
+/src/Data Models/Uoft.dbml
+/src/Web Scrapper/UofT.dbml
+
+########################################################################################
+# Hide all the bin files in each project
+######################################################################################## 
+/src/*/bin/**/*
+
+########################################################################################
+# Hide all the obj files in each project
+######################################################################################## 
+/src/*/obj/**/*
+
+/src/vs/*
+

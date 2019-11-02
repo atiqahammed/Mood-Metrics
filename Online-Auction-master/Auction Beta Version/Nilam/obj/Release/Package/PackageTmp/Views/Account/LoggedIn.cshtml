@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "LoggedIn";
+}
+
+@if (Session["userID"] != null)
+{
+    <h3>Hello @Session["userName"].ToString()</h3><br />
+}
+
+<div class="container">
+
+    <div class="col-md-11" style="padding-left:0px">
+        <ul class="nav nav-pills" role="tablist" style="margin-bottom:20px;">
+            <li role="presentation" class="active"><a href="~/Product/buyerHistory">Buyer History</a></li>
+            <li role="presentation"><a href="~/Product/sellerHistory">Seller History</a></li>
+            <li role="presentation"><a href="~/Account/invalidUserList">Pending Request<span class="badge">!</span></a></li>
+        </ul>
+    </div>
+    <div class="col-md-1">
+        <form  method="post" id="ForgotPassword" action="~/Account/Logout">
+            <button type="submit" class="btn btn-danger">Log Out</button>
+        </form>
+    </div>
+
+</div>
+
+<div class="container">
+    <p class="well">Welcome to Admin Dashboard</p>
+    @*@Html.Action("Load", "Product/buyerHistory")*@
+    @*@Html.Partial("~/Product/buyerHistory")*@
+
+</div>

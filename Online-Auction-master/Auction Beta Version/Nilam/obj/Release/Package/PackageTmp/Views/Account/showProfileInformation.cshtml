@@ -1,0 +1,92 @@
+﻿@model IEnumerable<dbLayer.userTable>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Profile Information</title>
+
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-11">
+
+        </div>
+
+        <div class="col-md-1">
+            <form method="post" id="ForgotPassword" action="~/Account/Logout">
+                <button type="submit" class="btn btn-danger">Log Out</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="well text-center">Profile Informaion</h2>
+    </div>
+
+        <div class="container">
+            <table class="table table-striped" border="1">
+                <tr>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.userID)
+                        </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.userName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.passWord)
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.userStatus)
+                        </th>*@
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.role)
+                        </th>*@
+                    <th>Action</th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.userID)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.userName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.passWord)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.userStatus)
+                            </td>*@
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.role)
+                            </td>*@
+                        <td>
+                            @Html.ActionLink("Update", "editProfile", new { userID = item.userID /* id=item.PrimaryKey */ })
+                            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+        <div class="container">
+            <form method="post" id="goback" action="~/Account/LoggedIn">
+                <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true">Go Back DashBoard</span></button>
+            </form>
+        </div>
+</body>
+</html>

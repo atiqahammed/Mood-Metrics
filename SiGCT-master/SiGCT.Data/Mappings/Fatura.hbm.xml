@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SiGCT.Models"
+                   namespace="SiGCT.Models" >
+
+	<class name="Fatura" schema="SiGCT">
+    <meta attribute="class-description">Fatura da conta</meta>
+
+		<id name="Id">
+			<generator class="assigned" />
+		</id>
+
+    <property name="Numero" />
+		<property name="CodigoBarras" />
+
+    <bag name="Contas" lazy="true" cascade="all" >
+      <key column="FaturaId" />
+      <one-to-many class="Conta" />
+    </bag>
+
+    <!--<property name="DataAlteracao" />
+    <property name="Ativo" />-->
+		
+	</class>
+</hibernate-mapping>

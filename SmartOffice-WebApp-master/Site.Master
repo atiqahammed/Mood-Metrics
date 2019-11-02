@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SmartOffice.master.cs" Inherits="SmOffice.SmartOffice" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="SmartOffice_stylesheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table align="center" style="width: 1024px;">
+                <tr style="height: 100px;">
+                    <td style="color: #FFFFFF; font-weight: bold; font-size: 30px; text-align: center; background-color: #990000">SmartOffice DashBoard</td>
+                </tr>
+                <tr style="height: 400px; vertical-align: top;">
+                    <td>
+                        <asp:ContentPlaceHolder ID="main" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr style="height: 30px;">
+                    <td style="color: #FFFFFF; background-color: #990000">Copyright &copy: 2019</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/umd/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+

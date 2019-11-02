@@ -1,0 +1,9 @@
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\bin\Debug\netcoreapp1.1\Sytner-College.deps.json
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\bin\Debug\netcoreapp1.1\Sytner-College.runtimeconfig.json
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\bin\Debug\netcoreapp1.1\Sytner-College.runtimeconfig.dev.json
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\bin\Debug\netcoreapp1.1\Sytner-College.dll
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\bin\Debug\netcoreapp1.1\Sytner-College.pdb
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\obj\Debug\netcoreapp1.1\Sytner-College.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\obj\Debug\netcoreapp1.1\Sytner-College.AssemblyInfo.cs
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\obj\Debug\netcoreapp1.1\Sytner-College.dll
+C:\Users\User\Documents\Projects\staff-review\Sytner-College\Sytner-College\obj\Debug\netcoreapp1.1\Sytner-College.pdb

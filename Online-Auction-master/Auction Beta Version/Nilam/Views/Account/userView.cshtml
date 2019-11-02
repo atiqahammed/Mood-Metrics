@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+@if (Session["userID"] != null)
+{
+    <h3>Hello @Session["userName"].ToString()</h3><br />
+}
+<br />
+
+
+
+@if (Session["userStatus"].ToString() == "valid")
+{
+    <div class="container">
+
+        <div class="col-md-11" style="padding-left:0px">
+            <ul class="nav nav-pills nav-justified" role="tablist" style="margin-bottom:20px;">
+                <li role="presentation" class="active"><a href="~/Product/uploadProduct">Upload Products</a></li>
+                <li role="presentation"><a href="~/Product/ShowListForUser">Already Uploaded</a></li>
+                <li role="presentation"><a href="~/Product/ShowBidListForUser">Bidded Products</a></li>
+                <li role="presentation"><a href="~/Bid/availableProducts">Available Products</a></li>
+                <li role="presentation"><a href="~/Product/winningProduct">Win Bid</a></li>
+                <li role="presentation"><a href="~/Account/showProfileInformation">Profile</a></li>
+            </ul>
+        </div>
+        <div class="col-md-1">
+            <form method="post" id="ForgotPassword" action="~/Account/Logout">
+                <button type="submit" class="btn btn-danger">Log Out</button>
+            </form>
+        </div>
+
+    </div>
+}
+
+@if (Session["userStatus"].ToString() == "invalid")
+{
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        Your account isn't verified yet!
+    </div>
+
+    <div class="container">
+
+        <div class="col-md-11" style="padding-left:0px">
+            <ul class="nav nav-pills nav-justified" role="tablist" style="margin-bottom:20px;">
+                <li role="presentation" class="active"><a href="~/Bid/availableProducts">Available Products</a></li>
+                <li role="presentation"><a href="~/Product/ShowBidListForUser">Bidded Products</a></li>
+                <li role="presentation"><a href="~/Product/winningProduct">Win Bid</a></li>
+                <li role="presentation"><a href="~/Account/showProfileInformation">Profile</a></li>
+            </ul>
+        </div>
+        <div class="col-md-1">
+            <form method="post" id="ForgotPassword" action="~/Account/Logout">
+                <button type="submit" class="btn btn-danger">Log Out</button>
+            </form>
+        </div>
+
+    </div>
+}
+
+
+
+

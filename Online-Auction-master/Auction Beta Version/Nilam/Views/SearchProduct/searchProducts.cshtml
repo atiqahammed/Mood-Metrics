@@ -1,0 +1,144 @@
+﻿@model IEnumerable<dbLayer.productTable>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search Available Products</title>
+
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-11">
+
+        </div>
+
+        <div class="col-md-1">
+            <form method="post" id="ForgotPassword" action="~/Account/Logout">
+                <button type="submit" class="btn btn-danger">Log Out</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="well text-center">All Available Products</h2>
+    </div>
+
+    <div class="container text-center">
+        <p>
+            @using (Html.BeginForm("searchProducts", "SearchProduct", FormMethod.Get))
+            {
+                <b> Search By: </b>
+                @Html.RadioButton("SearchBy", "Name", true)<text> Name</text>
+                @*@Html.DropDownList("categories","Select Category")*@
+                @Html.RadioButton("SearchBy", "Category")<text> Category</text>
+                <br />
+                @Html.TextBox("search") <input type="submit" value="Search" class="btn btn-primary"/>
+            }
+        </p>
+    </div>
+    <div class="container">
+        <table class="table table-striped" border="1">
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.productID)
+                    </th>*@
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Product Info
+                </th>
+                <th>
+                    Base Price
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    End Date
+                </th>
+                <th>
+                    Bidded Price
+                </th>
+                <th>
+                    Product Category
+                </th>
+                <th>
+                    Uploader
+                </th>
+                <th>
+                    Bidder
+                </th>
+                <th>Action</th>
+            </tr>
+
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="8" rowspan="5" style="color:red;">No Match Found For This Query</td>
+                </tr>
+            }
+
+            else
+            {
+
+                foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.productName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.productInfo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.basePrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.startDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.endDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.biddedPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.productCategory)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.uploader)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.bidder)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Bid on this", "BidFromSearch", new { productID = item.productID/* id=item.PrimaryKey */ }) 
+
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+
+    <div class="container">
+        <form method="post" id="goback" action="~/Bid/availableProducts">
+            <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true">Go Back Dashboard</span></button>
+        </form>
+    </div>
+</body>
+</html>

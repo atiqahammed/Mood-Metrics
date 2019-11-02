@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SiGCT.Models"
+                   namespace="SiGCT.Models" >
+
+	<class name="NotaFiscal" schema="SiGCT">
+
+		<id name="Id">
+			<generator class="assigned" />
+		</id>
+
+    <property name="Sequencial" not-null="true" />
+		<many-to-one name="Conta" column="ContaId" cascade="none" />
+    <property name="Emissao" type="Date" />
+    <property name="Vencimento" type="Date" />
+    <many-to-one name="Operadora" column="OperadoraId" cascade="none" />
+    <property name="ValorTotal" />
+    <property name="Tipo" />
+    <property name="Numero" />
+    <property name="Filler" length="204" />
+    <property name="Obs" length="50" />
+
+    <bag name="Chamadas" lazy="true" mutable="false" access="" cascade="all" >
+      <key column="NotaFiscalId" />
+      <one-to-many class="Chamada" />
+    </bag>
+
+    <bag name="Servicos" lazy="true" mutable="false" access="" cascade="all" >
+      <key column="NotaFiscalId" />
+      <one-to-many class="Servico" />
+    </bag>
+
+    <bag name="Descontos" lazy="true" mutable="false" access="" cascade="all" >
+      <key column="NotaFiscalId" />
+      <one-to-many class="Desconto" />
+    </bag>
+
+    <bag name="Planos" lazy="true" mutable="false" access="" cascade="all" >
+      <key column="NotaFiscalId" />
+      <one-to-many class="Plano" />
+    </bag>
+    
+    <!--<property name="DataAlteracao" />
+    <property name="Ativo" />-->
+		
+	</class>
+</hibernate-mapping>

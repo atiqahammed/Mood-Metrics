@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="auctionDBModelStoreContainer" CdmEntityContainer="AuctionEntities">
+    <EntitySetMapping Name="bidTables">
+      <EntityTypeMapping TypeName="auctionDBModel.bidTable">
+        <MappingFragment StoreEntitySet="bidTable">
+          <ScalarProperty Name="bidID" ColumnName="bidID" />
+          <ScalarProperty Name="bidPrice" ColumnName="bidPrice" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="bidStatus" ColumnName="bidStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productTables">
+      <EntityTypeMapping TypeName="auctionDBModel.productTable">
+        <MappingFragment StoreEntitySet="productTable">
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="productInfo" ColumnName="productInfo" />
+          <ScalarProperty Name="basePrice" ColumnName="basePrice" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="biddedPrice" ColumnName="biddedPrice" />
+          <ScalarProperty Name="productCategory" ColumnName="productCategory" />
+          <ScalarProperty Name="uploader" ColumnName="uploader" />
+          <ScalarProperty Name="bidder" ColumnName="bidder" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userTables">
+      <EntityTypeMapping TypeName="auctionDBModel.userTable">
+        <MappingFragment StoreEntitySet="userTable">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="passWord" ColumnName="passWord" />
+          <ScalarProperty Name="userStatus" ColumnName="userStatus" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

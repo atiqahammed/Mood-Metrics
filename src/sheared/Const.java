@@ -66,7 +66,13 @@ public class Const {
 									 	"\"POF\"" + "," +
 									 	"\"MIF\"" + "," +
 									 	"\"AIF\"" + "," +
-									 	"\"COF\"" ; 
+									 	"\"COF\"" + "," +
+									 	"\"Total Hidden Attribute\"" + "," +
+									 	"\"Total Attribute\"" + "," +
+									 	"\"Total Public Attribute\"" + "," +
+									 	"\"Total Hidden Method\"" + "," +
+									 	"\"Total Method Method\"" + "," +
+									 	"\"Total Public Method\""; 
 	
 	
 	

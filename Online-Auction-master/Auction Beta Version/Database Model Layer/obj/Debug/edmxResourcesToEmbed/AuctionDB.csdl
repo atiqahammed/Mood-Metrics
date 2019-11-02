@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="auctionDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="bidTable">
+    <Key>
+      <PropertyRef Name="bidID" />
+    </Key>
+    <Property Name="bidID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bidPrice" Type="Int32" />
+    <Property Name="userName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="productId" Type="Int32" />
+    <Property Name="productName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="bidStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="productTable">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="productInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="basePrice" Type="Int32" />
+    <Property Name="startDate" Type="DateTime" Precision="0" />
+    <Property Name="endDate" Type="DateTime" Precision="0" />
+    <Property Name="biddedPrice" Type="Int32" />
+    <Property Name="productCategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="uploader" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="bidder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="userTable">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="passWord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="role" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="auctionDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bidTables" EntityType="Self.bidTable" />
+    <EntitySet Name="productTables" EntityType="Self.productTable" />
+    <EntitySet Name="userTables" EntityType="Self.userTable" />
+  </EntityContainer>
+</Schema>

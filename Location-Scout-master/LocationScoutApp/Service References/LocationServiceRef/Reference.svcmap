@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d8500bcb-746f-4bb4-bb8a-c828ea947383" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://webstrar14.fulton.asu.edu/page0/LocationServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LocationServices.wsdl" MetadataType="Wsdl" ID="a8ceec7d-5f1a-4ab0-bc2b-cc265b142773" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page0/LocationServices.svc?wsdl" />
+    <MetadataFile FileName="LocationServices.xsd" MetadataType="Schema" ID="a23fbcba-d23b-409b-8e1c-b5d43c734d04" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page0/LocationServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="LocationServices1.xsd" MetadataType="Schema" ID="42216f8a-aba8-4554-b52c-cad3dd36f610" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page0/LocationServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="LocationServices.disco" MetadataType="Disco" ID="20574ad7-02b1-4b23-93cd-db21123c339e" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page0/LocationServices.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

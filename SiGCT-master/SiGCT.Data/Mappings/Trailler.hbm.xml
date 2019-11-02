@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SiGCT.Models"
+                   namespace="SiGCT.Models" >
+
+	<class name="Trailler" schema="SiGCT">
+		<meta attribute="class-description">
+      Consolidação de valores da conta faturada
+    </meta>
+
+		<id name="Id">
+      <generator class="identity" />
+		</id>
+
+    <property name="Sequencial" not-null="true" />
+    <many-to-one name="Conta" column="ContaId" cascade="none" />
+    <many-to-one name="Cliente" column="ClienteId" cascade="none" />
+    
+    <property name="ValorTotal" />
+    <property name="QtdeRegistros" />
+    
+    <property name="ValorTotalRegistro10" />
+    <property name="QtdeRegistros10" />
+
+    <property name="QtdeRegistros20" />
+
+    <property name="ValorTotalRegistro30" />
+    <property name="QtdeRegistros30" />
+
+    <property name="ValorTotalRegistro40" />
+    <property name="QtdeRegistros40" />
+
+    <property name="ValorTotalRegistro50" />
+    <property name="QtdeRegistros50" />
+
+    <property name="ValorTotalRegistro60" />
+    <property name="QtdeRegistros60" />
+
+    <property name="ValorTotalRegistro70" />
+    <property name="QtdeRegistros70" />
+
+    <property name="ValorTotalRegistro80" />
+    <property name="QtdeRegistros80" />
+
+    <property name="Filler" length="58" />
+    <property name="Obs" length="50" />
+		
+	</class>
+</hibernate-mapping>
+

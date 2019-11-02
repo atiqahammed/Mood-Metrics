@@ -172,7 +172,7 @@ public class Utils {
 		System.out.println("COF                                ::          " + COF);
 		
 		
-		Project project = new Project(projectName, projectLink, TC, lineOfCode, WMC, LCOM1, COB, MHF, AHF, POF, MIF, AIF, COF, RFC);
+		Project project = new Project(projectName, projectLink, TC, lineOfCode, WMC, LCOM1, COB, MHF, AHF, POF, MIF, AIF, COF, RFC, totalHiddenAttribute, totalAttribute, totalAttribute - totalHiddenAttribute, totalHiddenMethod, totalMethod, totalMethod - totalHiddenMethod);
 		Const.ALL_OUTPUT.add(project.getProjectCSVInfo());
 		
 		System.out.println();

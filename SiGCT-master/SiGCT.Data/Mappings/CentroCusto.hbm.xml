@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SiGCT.Models"
+                   namespace="SiGCT.Models" >
+
+	<class name="CentroCusto" schema="SiGCT">
+
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+
+    <property name="Sigla" length="3" />
+
+    <property name="Descricao" length="100" />
+
+    <bag name="Pessoas" lazy="true" cascade="all" >
+      <key column="CentroCustoId" />
+      <one-to-many class="Pessoa" />
+    </bag>
+
+    <bag name="Recursos" lazy="true" cascade="all" >
+      <key column="CentroCustoId" />
+      <one-to-many class="Recurso" />
+    </bag>
+
+
+  </class>
+</hibernate-mapping>

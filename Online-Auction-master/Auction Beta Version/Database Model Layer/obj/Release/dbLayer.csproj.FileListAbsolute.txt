@@ -1,0 +1,9 @@
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\bin\Release\dbLayer.dll.config
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\bin\Release\dbLayer.dll
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\bin\Release\dbLayer.pdb
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\bin\Release\EntityFramework.dll
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\bin\Release\EntityFramework.xml
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\obj\Release\dbLayer.dll
+C:\Users\wHD\Google Drive\AIUB LIFE\Nilam_Complete - Final\dbLayer\obj\Release\dbLayer.pdb

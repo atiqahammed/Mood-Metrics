@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SiGCT.Models"
+                   namespace="SiGCT.Models" >
+
+	<class name="Plano" schema="SiGCT">
+
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+
+    <property name="Sequencial" />
+    <many-to-one name="Conta" column="ContaId" cascade="none" />
+    <many-to-one name="Recurso" column="RecursoId" cascade="none" />
+    <property name="TipoPlano" length="1" />
+    <property name="InicioCiclo" />
+    <property name="FimCiclo" />
+
+    <many-to-one name="Operadora" class="Operadora" column="OperadoraId" />
+    <property name="ConsumoMedido" />
+    <property name="ConsumoFranqueado" />
+    <property name="UnidMedida" />
+    <many-to-one name="Categoria" column="CategoriaId" cascade="none" />
+    <property name="Codigo" />
+    <property name="Descricao" />
+    
+    <property name="ValorComImposto" />
+    <property name="ValorSemImposto" />
+    
+    <many-to-one name="NotaFiscal" column="NotaFiscalId" />
+
+    <property name="Filler" length="67" />
+    <property name="Obs" length="50" />
+    		
+		<!--<property name="DataAlteracao" />
+		<property name="Ativo" />-->
+
+	</class>
+</hibernate-mapping>

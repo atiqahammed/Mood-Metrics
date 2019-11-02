@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9fad1d3b-946f-4a30-bd85-3f72776efa1c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://webstrar14.fulton.asu.edu/page1/CrimeDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CrimeDataService.disco" MetadataType="Disco" ID="ace81fb5-a007-44f1-90da-9463cf606de5" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/CrimeDataService.svc?disco" />
+    <MetadataFile FileName="CrimeDataService.wsdl" MetadataType="Wsdl" ID="9660e894-b35e-4ae4-a8d2-a4088ac633cd" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/CrimeDataService.svc?wsdl" />
+    <MetadataFile FileName="CrimeDataService.xsd" MetadataType="Schema" ID="3b9517ca-484a-4acc-b126-9098cd582d54" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/CrimeDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CrimeDataService1.xsd" MetadataType="Schema" ID="e5e2266a-0e40-4fd2-86b4-ea807aff4ab7" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/CrimeDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CrimeDataService2.xsd" MetadataType="Schema" ID="91fdf7a0-92cf-4457-8bcc-a436ed888f85" SourceId="1" SourceUrl="http://webstrar14.fulton.asu.edu/Page1/CrimeDataService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

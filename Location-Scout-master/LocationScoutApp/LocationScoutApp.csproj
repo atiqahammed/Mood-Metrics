@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33B49574-DA7A-4970-8CC4-6814468AEA80}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LocationScoutApp</RootNamespace>
+    <AssemblyName>LocationScoutApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="HashTryIt.aspx" />
+    <Content Include="ImageVerifier.aspx" />
+    <Content Include="LoginControl.ascx" />
+    <Content Include="MemberLogin.aspx" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\LocationScout.pubxml" />
+    <None Include="Service References\CrimeServiceRef\CrimeDataService.wsdl" />
+    <None Include="Service References\CrimeServiceRef\CrimeDataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrimeServiceRef\CrimeDataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrimeServiceRef\CrimeDataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ImageVerifierServiceRef\Service.wsdl" />
+    <None Include="Service References\ImageVerifierServiceRef\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ImageVerifierServiceRef\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ImageVerifierServiceRef\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationServiceRef\LocationServices.wsdl" />
+    <None Include="Service References\LocationServiceRef\LocationServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationServiceRef\LocationServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrimeServiceRef\CrimeDataService.disco" />
+    <None Include="Service References\CrimeServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\CrimeServiceRef\configuration.svcinfo" />
+    <None Include="Service References\CrimeServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="PageHeaderControl.ascx" />
+    <None Include="Service References\ImageVerifierServiceRef\Service.disco" />
+    <None Include="Service References\ImageVerifierServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\ImageVerifierServiceRef\configuration.svcinfo" />
+    <None Include="Service References\ImageVerifierServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\NewsServiceRef\LocationScoutApp.NewsServiceRef.News.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\NewsServiceRef\NewsDataService.wsdl" />
+    <None Include="Service References\NewsServiceRef\NewsDataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NewsServiceRef\NewsDataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NewsServiceRef\NewsDataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuakeServiceRef\QuakeService.wsdl" />
+    <None Include="Service References\QuakeServiceRef\QuakeService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuakeServiceRef\QuakeService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WeatherServiceRef\WeatherService.wsdl" />
+    <None Include="Service References\WeatherServiceRef\WeatherService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WeatherServiceRef\WeatherService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Member.aspx" />
+    <Content Include="MemberRegisteration.aspx" />
+    <None Include="Service References\LocationServiceRef\LocationServices.disco" />
+    <None Include="Service References\LocationServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\LocationServiceRef\configuration.svcinfo" />
+    <None Include="Service References\LocationServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\QuakeServiceRef\QuakeService.disco" />
+    <None Include="Service References\QuakeServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\QuakeServiceRef\configuration.svcinfo" />
+    <None Include="Service References\QuakeServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\NewsServiceRef\NewsDataService.disco" />
+    <None Include="Service References\NewsServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\NewsServiceRef\configuration.svcinfo" />
+    <None Include="Service References\NewsServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WeatherServiceRef\WeatherService.disco" />
+    <None Include="Service References\WeatherServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\WeatherServiceRef\configuration.svcinfo" />
+    <None Include="Service References\WeatherServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Staff.aspx" />
+    <Content Include="StaffLogin.aspx" />
+    <Content Include="StaffRegistration.aspx" />
+    <Content Include="UserManipulationTryIt.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HashTryIt.aspx.cs">
+      <DependentUpon>HashTryIt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HashTryIt.aspx.designer.cs">
+      <DependentUpon>HashTryIt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageVerifier.aspx.cs">
+      <DependentUpon>ImageVerifier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageVerifier.aspx.designer.cs">
+      <DependentUpon>ImageVerifier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginControl.ascx.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginControl.ascx.designer.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Member.aspx.cs">
+      <DependentUpon>Member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member.aspx.designer.cs">
+      <DependentUpon>Member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralUserClass.cs" />
+    <Compile Include="MemberLogin.aspx.cs">
+      <DependentUpon>MemberLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberLogin.aspx.designer.cs">
+      <DependentUpon>MemberLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberRegisteration.aspx.cs">
+      <DependentUpon>MemberRegisteration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberRegisteration.aspx.designer.cs">
+      <DependentUpon>MemberRegisteration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageHeaderControl.ascx.cs">
+      <DependentUpon>PageHeaderControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageHeaderControl.ascx.designer.cs">
+      <DependentUpon>PageHeaderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CrimeServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ImageVerifierServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LocationServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NewsServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\QuakeServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WeatherServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.aspx.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff.aspx.designer.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffLogin.aspx.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffLogin.aspx.designer.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffRegistration.aspx.cs">
+      <DependentUpon>StaffRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffRegistration.aspx.designer.cs">
+      <DependentUpon>StaffRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManipulationTryIt.aspx.cs">
+      <DependentUpon>UserManipulationTryIt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManipulationTryIt.aspx.designer.cs">
+      <DependentUpon>UserManipulationTryIt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserXmlManipulation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CrimeServiceRef\" />
+    <WCFMetadataStorage Include="Service References\ImageVerifierServiceRef\" />
+    <WCFMetadataStorage Include="Service References\LocationServiceRef\" />
+    <WCFMetadataStorage Include="Service References\NewsServiceRef\" />
+    <WCFMetadataStorage Include="Service References\QuakeServiceRef\" />
+    <WCFMetadataStorage Include="Service References\WeatherServiceRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HashClassLibrary\HashClassLibrary.csproj">
+      <Project>{601ad2e6-7221-45fa-a9e8-159a42fbf33b}</Project>
+      <Name>HashClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>31289</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:31232/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

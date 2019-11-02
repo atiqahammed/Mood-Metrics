@@ -1,0 +1,214 @@
+﻿@model dbLayer.productTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Place Bid</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-11">
+
+        </div>
+
+        <div class="col-md-1">
+            <form method="post" id="ForgotPassword" action="~/Account/Logout">
+                <button type="submit" class="btn btn-danger">Log Out</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="well text-center">Increase your Bid</h2>
+    </div>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.productID, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.productID, new { htmlAttributes = new { @class = "form-control" ,style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.productID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.productName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.productName, new { htmlAttributes = new { @class = "form-control", style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.productName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.productInfo, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.productInfo, new { htmlAttributes = new { @class = "form-control", style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.productInfo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.basePrice, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.basePrice, new { htmlAttributes = new { @class = "form-control", style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.basePrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.startDate, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.startDate, new { htmlAttributes = new { @class = "form-control", style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.startDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.endDate, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.endDate, new { htmlAttributes = new { @class = "form-control", style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.endDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.biddedPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*<div class="col-md-10">
+                        @Html.EditorFor(model => model.biddedPrice, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.biddedPrice, "", new { @class = "text-danger" })
+                    </div>*@
+                <div class="col-md-10">
+                    @{
+                        var valueFromDB = Html.DisplayFor(model => model.biddedPrice).ToString();
+
+
+                        if (valueFromDB == "")
+                        {
+                            var valueFromDBofBasePrice = Html.DisplayFor(model => model.basePrice).ToString();
+                            int convertOFvalueFromDBofBasePrice = Convert.ToInt32(valueFromDBofBasePrice);
+                            var tokenFor50 = 50 + convertOFvalueFromDBofBasePrice;
+                            var tokenFor100 = 100 + convertOFvalueFromDBofBasePrice;
+                            var tokenFor250 = 250 + convertOFvalueFromDBofBasePrice;
+                            var tokenFor500 = 500 + convertOFvalueFromDBofBasePrice;
+                            List<SelectListItem> listItems = new List<SelectListItem>();
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "50",
+                                Value = tokenFor50.ToString(),
+                                Selected = true
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "100",
+                                Value = tokenFor100.ToString()
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "250",
+                                Value = tokenFor250.ToString()
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "500",
+                                Value = tokenFor500.ToString()
+                            });
+                            @Html.DropDownListFor(model => model.biddedPrice, listItems)
+                        }
+
+
+
+                        else
+                        {
+                            int convertOFvalueFromDB = Convert.ToInt32(valueFromDB);
+                            var tokenFor50 = 50 + convertOFvalueFromDB;
+                            var tokenFor100 = 100 + convertOFvalueFromDB;
+                            var tokenFor250 = 250 + convertOFvalueFromDB;
+                            var tokenFor500 = 500 + convertOFvalueFromDB;
+                            List<SelectListItem> listItems = new List<SelectListItem>();
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "50",
+                                Value = tokenFor50.ToString(),
+                                Selected = true
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "100",
+                                Value = tokenFor100.ToString()
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "250",
+                                Value = tokenFor250.ToString()
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "500",
+                                Value = tokenFor500.ToString()
+                            });
+                            @Html.DropDownListFor(model => model.biddedPrice, listItems)
+                        }
+
+                    }
+
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.productCategory, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.productCategory, new { htmlAttributes = new { @class = "form-control", style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.productCategory, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.uploader, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.uploader, new { htmlAttributes = new { @class = "form-control", style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.uploader, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.bidder, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.bidder, new { htmlAttributes = new { @class = "form-control", Value = Session["userName"].ToString(), style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.bidder, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Place Bid" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+                        }
+
+    <div class="container">
+        <form method="post" id="goback" action="~/Product/ShowBidListForUser">
+            <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true">Go Back</span></button>
+        </form>
+    </div>
+</body>
+</html>
